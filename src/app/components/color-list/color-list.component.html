@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            Color
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let palletEntry of colors">
+                        <th scope="row">{{ palletEntry.Id }}</th>
+                        <td>{{ palletEntry.Name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

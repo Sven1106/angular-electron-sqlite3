@@ -1,3 +1,4 @@
+import { ColorListComponent } from './components/color-list/color-list.component';
 import { PalletEntryListComponent } from './components/palletEntry-list/palletEntry-list.component';
 import 'reflect-metadata';
 import '../polyfills';
@@ -49,6 +50,7 @@ library.add(
         NavbarComponent,
         SidebarComponent,
         PalletEntryListComponent,
+        ColorListComponent,
         WebviewDirective
     ],
     imports: [

@@ -15,7 +15,13 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Dashboard', icon: 'desktop', class: '' },
     { path: '', title: 'Table', icon: 'th', class: '' },
-    { path: 'palletEntry-list', title: 'PalletEntry', icon: 'th', class: '' }
+    { path: 'color-list', title: 'Color', icon: 'palette', class: '' },
+    {
+        path: 'palletEntry-list',
+        title: 'PalletEntry',
+        icon: 'pallet',
+        class: ''
+    }
 ];
 
 @Component({
