@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+}
+
+.main-panel {
+    flex-grow: 2;
+
+    .main-content {
+        padding: 30px 15px;
+        min-height: calc(100vh - 80px);
+    }
+}

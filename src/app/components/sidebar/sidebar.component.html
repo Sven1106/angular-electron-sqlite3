@@ -1,0 +1,94 @@
+<!-- <div class="sidebar-wrapper">
+    <div class="firm">
+        <div class="firm-logo">
+            <img
+                src="https://demos.creative-tim.com/paper-dashboard-angular/assets/img/angular2-logo.png"
+            />
+        </div>
+        <p class="firm-title">FIRM NAME</p>
+    </div>
+    <ul class="nav flex-column">
+        <li
+            *ngFor="let menuItem of menuItems"
+            routerLinkActive="active"
+            class="{{ menuItem.class }}"
+        >
+            <a [routerLink]="[menuItem.path]" class="nav-link">
+                <div class="nav-icon">
+                    <fa-icon icon="{{ menuItem.icon }}"></fa-icon>
+                </div>
+                <p class="nav-title">
+                    {{ menuItem.title }}
+                </p>
+            </a>
+        </li>
+    </ul>
+</div> -->
+
+<div class="sidebar-wrapper">
+    <div class="firm">
+        <div class="firm-logo">
+            <img
+                src="https://demos.creative-tim.com/paper-dashboard-angular/assets/img/angular2-logo.png"
+            />
+        </div>
+        <p class="firm-title">FIRM NAME</p>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['dashboard']" class="nav-link">
+                <div class="nav-icon">
+                    <fa-icon icon="desktop"></fa-icon>
+                </div>
+                <p class="nav-title">
+                    Dashboard
+                </p>
+            </a>
+        </li>
+        <li class="nav-item collapsed">
+            <a class="nav-link" (click)="isCollapsed = !isCollapsed">
+                <div class="nav-icon">
+                    <fa-icon icon="th"></fa-icon>
+                </div>
+                <p class="nav-title">
+                    table
+                    <fa-icon
+                        icon="{{ isCollapsed ? 'caret-down' : 'caret-up' }}"
+                    ></fa-icon>
+                </p>
+            </a>
+            <ul class="nav flex-column" [collapse]="isCollapsed">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <div class="nav-icon">
+                            <fa-icon icon="palette"></fa-icon>
+                        </div>
+                        <p class="nav-title">
+                            Color
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a [routerLink]="['palletEntry-list']" class="nav-link">
+                        <div class="nav-icon">
+                            <fa-icon icon="pallet"></fa-icon>
+                        </div>
+                        <p class="nav-title">
+                            PalletEntry
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link">
+                <div class="nav-icon">
+                    <fa-icon icon="cogs"></fa-icon>
+                </div>
+                <p class="nav-title">
+                    Settings
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>

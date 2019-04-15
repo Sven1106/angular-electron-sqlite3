@@ -4,7 +4,7 @@ import { ElectronService } from './electron.service';
 
 import * as path from 'path';
 import { SqlStatement } from '../_models/SqlStatement';
-const { remote, ipcRenderer } = require('electron');
+const { remote } = require('electron');
 const dbProcessId = remote.getGlobal('dbProcessId');
 
 
@@ -23,6 +23,9 @@ export class DatabaseService {
   }
   public on(channel: string, listener: Function): void {
     this.electronService.ipcRenderer.on(channel, (evt, args) => listener(evt, args));
+  }
+  public removeAllListeners(channel: string) {
+    this.electronService.ipcRenderer.removeAllListeners(channel);
   }
 
 }
