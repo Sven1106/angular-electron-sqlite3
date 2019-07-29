@@ -1,3 +1,4 @@
+INSERT INTO "Company" VALUES (1,'John Doe Inc.', '25 25 25 25', null);
 INSERT INTO "Color" VALUES (1,'Rød');
 INSERT INTO "Color" VALUES (2,'Blå');
 INSERT INTO "PalletEntry" VALUES (1,1,2,40);

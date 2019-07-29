@@ -9,17 +9,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
-    constructor(public route: Router) {}
+    constructor(public route: Router) { }
 
     getTitle() {
         let title = this.route.url;
         title = title.substring(1);
-        console.log(title);
-        for (let item = 0; item < this.listTitles.length; item++) {
-            console.log(this.listTitles[item].path);
-            if (this.listTitles[item].path === title) {
-                return this.listTitles[item].title;
-            }
+        if (this.listTitles.find(x => x.path === title)) {
+            return title;
         }
         return 'Dashboard';
     }

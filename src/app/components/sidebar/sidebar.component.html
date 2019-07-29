@@ -28,11 +28,9 @@
 <div class="sidebar-wrapper">
     <div class="firm">
         <div class="firm-logo">
-            <img
-                src="https://demos.creative-tim.com/paper-dashboard-angular/assets/img/angular2-logo.png"
-            />
+            <img src="https://demos.creative-tim.com/paper-dashboard-angular/assets/img/angular2-logo.png" />
         </div>
-        <p class="firm-title">FIRM NAME</p>
+        <p class="firm-title">{{ firmName }}</p>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item" routerLinkActive="active">
@@ -52,9 +50,7 @@
                 </div>
                 <p class="nav-title">
                     table
-                    <fa-icon
-                        icon="{{ isCollapsed ? 'caret-down' : 'caret-up' }}"
-                    ></fa-icon>
+                    <fa-icon icon="{{ isCollapsed ? 'caret-down' : 'caret-up' }}"></fa-icon>
                 </p>
             </a>
             <ul class="nav flex-column" [collapse]="isCollapsed">
@@ -81,12 +77,12 @@
             </ul>
         </li>
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link">
+            <a [routerLink]="['configuration']" class="nav-link">
                 <div class="nav-icon">
                     <fa-icon icon="cogs"></fa-icon>
                 </div>
                 <p class="nav-title">
-                    Settings
+                    Configuration
                 </p>
             </a>
         </li>

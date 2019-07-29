@@ -30,4 +30,12 @@ CREATE TABLE IF NOT EXISTS "Wholesaler" (
 	"Name"	text,
 	PRIMARY KEY("Id")
 );
+CREATE TABLE IF NOT EXISTS "Company" (
+	"Id"	integer NOT NULL,
+	"Name"	text,
+	"Phone" text,
+	"Logo"  text,
+	PRIMARY KEY("Id")
+);
 COMMIT;
+

@@ -1,3 +1,4 @@
+import { ConfigurationComponent } from './components/configuration/configuration.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
 import { PalletEntryListComponent } from './components/palletEntry-list/palletEntry-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'palletEntry-list',
         component: PalletEntryListComponent
+    },
+    {
+        path: 'configuration',
+        component: ConfigurationComponent
     }
 ];
 

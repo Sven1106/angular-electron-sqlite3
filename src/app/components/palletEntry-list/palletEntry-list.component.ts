@@ -1,48 +1,40 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { SqlStatement } from '../../_models/SqlStatement';
-import { DatabaseService } from '../../_services/database.service';
+import { Component, OnInit } from '@angular/core'
+import { SqlStatement } from '../../_models/SqlStatement'
+import { DatabaseService } from '../../_services/database.service'
 
 @Component({
     selector: 'app-palletEntry-list',
     templateUrl: './palletEntry-list.component.html',
-    styleUrls: ['./palletEntry-list.component.scss']
+    styleUrls: ['./palletEntry-list.component.scss'],
 })
 export class PalletEntryListComponent implements OnInit {
-    getAllSql: SqlStatement;
-    palletEntries: any;
-    constructor(
-        private databaseService: DatabaseService,
-        private zone: NgZone
-    ) {}
+    palletEntriesSql: SqlStatement
+    palletEntries: any
+    constructor(private databaseService: DatabaseService) {}
     ngOnInit() {
-        this.getAllSql = {
+        this.palletEntriesSql = {
             targetColumns: ['PalletEntry.*', 'Color.Name'],
             table: 'PalletEntry',
             join: {
                 joiningTable: 'Color',
                 tableFK: 'ColorId',
-                joiningTablePK: 'Id'
+                joiningTablePK: 'Id',
             },
             limit: 50,
             orderBy: [
                 {
                     column: 'Id',
-                    order: 'asc'
-                }
-            ]
-        };
-        const getAllTimeStart = performance.now();
-        this.databaseService.sendTo('getAll', this.getAllSql);
-        this.databaseService.on('getAll', (event, arg) => {
-            this.zone.run(() => {
-                const getAllTimeEnd = performance.now();
-                this.palletEntries = arg;
-                console.log(arg);
-                this.databaseService.removeAllListeners('getAll');
-                console.log(
-                    'getAll took: ' + (getAllTimeEnd - getAllTimeStart) + 'ms'
-                );
-            });
-        });
+                    order: 'asc',
+                },
+            ],
+        }
+
+        this.databaseService.sendToDbAndListen(
+            'get',
+            this.palletEntriesSql,
+            (evt, arg) => {
+                this.palletEntries = arg
+            }
+        )
     }
 }

@@ -1,5 +1,6 @@
 :host {
     transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
     width: 260px;
     background-color: #ffffff;
     box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
@@ -58,6 +59,9 @@
         margin-top: 20px;
         li {
             > a {
+                cursor: pointer;
+                user-select:none;
+                outline: none;
                 margin: 10px 15px;
                 border-radius: 3px;
                 color: #3c4858;

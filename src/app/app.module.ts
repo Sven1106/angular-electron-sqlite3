@@ -1,5 +1,3 @@
-import { ColorListComponent } from './components/color-list/color-list.component';
-import { PalletEntryListComponent } from './components/palletEntry-list/palletEntry-list.component';
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,11 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
+import { PalletEntryListComponent } from './components/palletEntry-list/palletEntry-list.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { WebviewDirective } from './directives/webview.directive';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ConfigurationComponent } from './components/configuration/configuration.component';
 
+import { WebviewDirective } from './directives/webview.directive';
 // Add an icon to the library for convenient access in other components
 library.add(
     faCoffee,
@@ -47,6 +48,7 @@ library.add(
     declarations: [
         AppComponent,
         DashboardComponent,
+        ConfigurationComponent,
         NavbarComponent,
         SidebarComponent,
         PalletEntryListComponent,
